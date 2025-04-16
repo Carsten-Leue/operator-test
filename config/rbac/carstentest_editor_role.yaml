@@ -1,0 +1,27 @@
+# permissions for end users to edit carstentests.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: operator-test
+    app.kubernetes.io/managed-by: kustomize
+  name: carstentest-editor-role
+rules:
+- apiGroups:
+  - cache.carsten-leue.de
+  resources:
+  - carstentests
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - cache.carsten-leue.de
+  resources:
+  - carstentests/status
+  verbs:
+  - get

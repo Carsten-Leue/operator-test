@@ -1,0 +1,32 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: manager-role
+rules:
+- apiGroups:
+  - cache.carsten-leue.de
+  resources:
+  - carstentests
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - cache.carsten-leue.de
+  resources:
+  - carstentests/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - cache.carsten-leue.de
+  resources:
+  - carstentests/status
+  verbs:
+  - get
+  - patch
+  - update

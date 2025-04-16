@@ -1,0 +1,9 @@
+apiVersion: cache.carsten-leue.de/v1
+kind: CarstenTest
+metadata:
+  labels:
+    app.kubernetes.io/name: operator-test
+    app.kubernetes.io/managed-by: kustomize
+  name: carstentest-sample
+spec:
+  foo: Carsten
